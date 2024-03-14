@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accessible Quran Player</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script defer src="alpinejs-persist.js"></script>
+    <script src="alpine.js" defer></script>
+    <script src="data.js"></script>
+    <script src="component.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="icon.png">
+
+</head>
+<body x-data="quran" x-bind="body">
+    <audio
+        x-bind="player"
+        x-ref="player"
+        class="player" preload="auto"></audio>
+    <div id="container" x-ref="wrap">
+        <div id="stickScroller" x-ref="scroller">
+            <div id="stickCircle" class="center-circle" x-text="currentIndex"></div>
+            <div class="sensor top"></div>
+            <div class="sensor right"></div>
+            <div class="sensor bottom"></div>
+            <div class="sensor left"></div>
+        </div>
+    </div>
+</body>
+</html>
